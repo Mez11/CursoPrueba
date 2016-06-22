@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2016 7:33:58 PM by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="com.cu.hbm.model.Helado" table="Helado" catalog="mydb" optimistic-lock="version">
+        <id name="idHelado" type="int">
+            <column name="idHelado" />
+            <generator class="assigned" />
+        </id>
+        <property name="sabor" type="string">
+            <column name="sabor" length="45" not-null="true" />
+        </property>
+        <property name="precio" type="java.lang.Long">
+            <column name="precio" precision="10" scale="0" />
+        </property>
+        <set name="comprases" table="Compras" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idHelado" not-null="true" />
+            </key>
+            <one-to-many class="com.cu.hbm.model.Compras" />
+        </set>
+    </class>
+</hibernate-mapping>

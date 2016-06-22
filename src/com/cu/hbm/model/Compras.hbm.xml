@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2016 7:33:58 PM by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="com.cu.hbm.model.Compras" table="Compras" catalog="mydb" optimistic-lock="version">
+        <id name="idCompras" type="int">
+            <column name="idCompras" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="helado" class="com.cu.hbm.model.Helado" fetch="select">
+            <column name="idHelado" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuario" class="com.cu.hbm.model.Usuario" fetch="select">
+            <column name="idUsuario" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
