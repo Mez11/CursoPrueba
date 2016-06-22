@@ -2,12 +2,14 @@ package com.cu.hbm.model;
 // Generated Jun 21, 2016 7:33:58 PM by Hibernate Tools 5.1.0.Alpha1
 
 import java.util.List;
+
 import javax.naming.InitialContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Example;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Home object for domain model class Usuario.
@@ -15,8 +17,7 @@ import org.hibernate.criterion.Example;
  * @author Hibernate Tools
  */
 public class UsuarioHome {
-
-	private static final Log log = LogFactory.getLog(UsuarioHome.class);
+	private static final Logger log = LoggerFactory.getLogger( UsuarioHome.class );
 
 	private final SessionFactory sessionFactory = getSessionFactory();
 
